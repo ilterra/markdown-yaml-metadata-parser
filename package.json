@@ -1,6 +1,6 @@
 {
   "name": "markdown-yaml-metadata-parser",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Parse YAML metadata in a markdown document",
   "keywords": [
     "markdown",
