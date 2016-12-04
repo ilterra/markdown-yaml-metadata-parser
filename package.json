@@ -12,7 +12,7 @@
   "author": "Alberto Terragni",
   "main": "./lib/parser.js",
   "files": [
-    "./lib",
+    "lib",
     "yarn.lock"
   ],
   "repository": {
