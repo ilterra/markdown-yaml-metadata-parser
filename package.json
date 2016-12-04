@@ -1,6 +1,6 @@
 {
   "name": "markdown-yaml-metadata-parser",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Parse YAML metadata in a markdown document",
   "keywords": [
     "markdown",
@@ -11,7 +11,10 @@
   "license": "MIT",
   "author": "Alberto Terragni",
   "main": "./lib/parser.js",
-  "files": [],
+  "files": [
+    "./lib",
+    "yarn.lock",
+  ],
   "repository": {
     "type" : "git",
     "url" : "https://github.com/ninjabachelor/markdown-yaml-metadata-parser"
