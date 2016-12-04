@@ -1,0 +1,11 @@
+{
+    "extends": "airbnb/base",
+    "plugins": [
+        "import"
+    ],
+    "rules": {
+        "max-len": [1, 120, 2, {"ignoreComments": true}],
+        "valid-jsdoc": ["error"],
+        "require-jsdoc": ["error"]
+    }
+}

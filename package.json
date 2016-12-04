@@ -1,0 +1,42 @@
+{
+  "name": "markdown-yaml-metadata-parser",
+  "version": "0.0.1",
+  "description": "Parse YAML metadata in a markdown document",
+  "keywords": [
+    "markdown",
+    "yaml",
+    "metadata"
+  ],
+  "bugs": "https://github.com/ninjabachelor/markdown-yaml-metadata-parser/issues",
+  "license": "MIT",
+  "author": "Alberto Terragni",
+  "main": "./lib/parser.js",
+  "files": [],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/ninjabachelor/markdown-yaml-metadata-parser"
+  },
+  "scripts": {
+    "eslint": "./node_modules/.bin/eslint lib/*",
+    "eslint:fix": "./node_modules/.bin/eslint --fix lib/*",
+    "test": "jest --coverage"
+  },
+  "dependencies": {
+    "js-yaml": "^3.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.11.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "jest-cli": "^17.0.3"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "lib/*.js"
+    ]
+  }
+}
