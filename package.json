@@ -13,7 +13,7 @@
   "main": "./lib/parser.js",
   "files": [
     "./lib",
-    "yarn.lock",
+    "yarn.lock"
   ],
   "repository": {
     "type" : "git",
