@@ -1,7 +1,6 @@
 # Markdown YAML metadata parser
 
 [![Build Status](https://travis-ci.org/ninjabachelor/markdown-yaml-metadata-parser.svg?branch=master)](https://travis-ci.org/ninjabachelor/markdown-yaml-metadata-parser)
-[![Coverage Status](https://coveralls.io/repos/github/ninjabachelor/markdown-yaml-metadata-parser/badge.svg?branch=master)](https://coveralls.io/github/ninjabachelor/markdown-yaml-metadata-parser?branch=master)
 
 Markdown YAML metadata parser. Parse YAML metadata in a markdown document.
 

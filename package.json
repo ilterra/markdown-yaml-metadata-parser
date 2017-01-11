@@ -6,7 +6,6 @@
   },
   "description": "Parse YAML metadata in a markdown document",
   "devDependencies": {
-    "coveralls": "^2.11.15",
     "eslint": "^3.13.1",
     "eslint-config-airbnb": "^14.0.0",
     "eslint-plugin-import": "^2.2.0",
@@ -22,7 +21,7 @@
   "jest": {
     "testEnvironment": "node",
     "collectCoverageFrom": [
-      "lib/*.js"
+      "src/*.js"
     ]
   },
   "keywords": [
@@ -40,7 +39,7 @@
   "scripts": {
     "eslint": "./node_modules/.bin/eslint lib/*",
     "eslint:fix": "./node_modules/.bin/eslint --fix lib/*",
-    "test": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "test": "jest --coverage"
   },
   "version": "0.0.4"
 }
