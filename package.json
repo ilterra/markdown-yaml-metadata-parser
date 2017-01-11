@@ -45,7 +45,8 @@
     "build:watch": "rm -rf lib && mkdir lib && babel -w src -d lib",
     "eslint": "eslint src",
     "eslint:fix": "eslint --fix src",
+    "prepublish": "npm run build",
     "test": "jest --coverage"
   },
-  "version": "0.0.4"
+  "version": "0.0.5"
 }
