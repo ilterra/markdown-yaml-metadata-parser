@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const metadataParser = require('../src/parser');
+import fs from 'fs';
+import path from 'path';
+import metadataParser from '../src/parser';
 
 const source01 = fs.readFileSync(path.join(__dirname, 'fixtures', 'document-01.markdown'), 'utf-8');
 const source02 = fs.readFileSync(path.join(__dirname, 'fixtures', 'document-02.markdown'), 'utf-8');

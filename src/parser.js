@@ -3,7 +3,7 @@
  * @module markdown-yaml-metadata-parser
  */
 
-const yaml = require('js-yaml');
+import yaml from 'js-yaml';
 
 const METADATA_START = /^---\n/;
 const METADATA_END = /\n---\n/;
