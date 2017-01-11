@@ -1,7 +1,11 @@
 {
-    "extends": "airbnb/base",
+    "extends": [
+        "airbnb/base",
+        "plugin:flowtype/recommended"
+    ],
     "plugins": [
-        "import"
+        "import",
+        "flowtype"
     ],
     "rules": {
         "max-len": [1, 120, 2, {"ignoreComments": true}],
