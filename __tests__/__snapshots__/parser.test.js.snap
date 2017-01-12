@@ -14,7 +14,7 @@ exports[`test returns no metadata in a document with empty metadata 1`] = `
 Object {
   "content": "
 Empty metadata. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
-  "metadata": "",
+  "metadata": Object {},
 }
 `;
 
@@ -27,7 +27,7 @@ title: The murder of our hopes and dreams
 author: Master John
 keywords: comedy, movie
 ---",
-  "metadata": "",
+  "metadata": Object {},
 }
 `;
 
@@ -36,7 +36,7 @@ Object {
   "content": "# Document with no metadata
 
 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
-  "metadata": "",
+  "metadata": Object {},
 }
 `;
 
@@ -48,7 +48,7 @@ author: Marcus Antonius
 keywords: latin, ipsum
 
 No metadata end. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
-  "metadata": "",
+  "metadata": Object {},
 }
 `;
 
@@ -60,6 +60,6 @@ keywords: latin, ipsum
 ---
 
 No metadata start. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
-  "metadata": "",
+  "metadata": Object {},
 }
 `;
