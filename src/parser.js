@@ -1,6 +1,7 @@
 /**
  * Markdown YAML metadata parser
  * @module markdown-yaml-metadata-parser
+ * @flow
  */
 
 import yaml from 'js-yaml';
@@ -9,13 +10,26 @@ const METADATA_START = /^---\n/;
 const METADATA_END = /\n---\n/;
 
 /**
+ * Flow type aliases
+ */
+type SplitResult = {
+  metadata: string,
+  content: string,
+};
+
+type ParseResult = {
+  metadata: Object,
+  content: string,
+};
+
+/**
  * Split a markdown source string into a two-property object containing metadata and content.
  *
  * @private
  * @param {String} src The string to split.
  * @returns {Object} Two-property object containing 'metadata' and 'content'.
  */
-const splitSource = (src) => {
+const splitSource = (src: string): SplitResult => {
   const splitResult = {
     metadata: '',
     content: src,
@@ -51,18 +65,22 @@ const splitSource = (src) => {
  * @throws {YAMLException} On YAML parsing error.
  * @returns {Object} Two-property object: 'metadata': object of parsed metadata, 'content': document source without metadata
  */
-const parse = (src) => {
+const parse = (src: string): ParseResult => {
   if (!(typeof src === 'string' || src instanceof String)) {
     throw new TypeError('Source parameter (src) must be a string.');
   }
 
   const splitResult = splitSource(src);
+  const parseResult = {
+    metadata: {},
+    content: splitResult.content,
+  };
 
   if (splitResult.metadata) {
-    splitResult.metadata = yaml.safeLoad(splitResult.metadata);
+    parseResult.metadata = yaml.safeLoad(splitResult.metadata);
   }
 
-  return splitResult;
+  return parseResult;
 };
 
 module.exports = parse;
