@@ -1,7 +1,8 @@
+ // @flow
+
 /**
  * Markdown YAML metadata parser
  * @module markdown-yaml-metadata-parser
- * @flow
  */
 
 import yaml from 'js-yaml';
