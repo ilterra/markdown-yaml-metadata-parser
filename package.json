@@ -16,6 +16,7 @@
     "eslint-config-airbnb": "^14.0.0",
     "eslint-plugin-flowtype": "^2.29.2",
     "eslint-plugin-import": "^2.2.0",
+    "flow-copy-source": "^1.1.0",
     "jest-cli": "^18.1.0"
   },
   "engines": {
@@ -48,7 +49,8 @@
     "build:watch": "rm -rf lib && mkdir lib && babel -w src -d lib",
     "eslint": "eslint src",
     "eslint:fix": "eslint --fix src",
-    "prepublish": "npm run build",
+    "flow-copy-source": "flow-copy-source src lib",
+    "prepublish": "npm run build && npm run flow-copy-source",
     "test": "jest --coverage"
   },
   "version": "0.0.5"
