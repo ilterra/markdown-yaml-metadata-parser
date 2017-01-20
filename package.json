@@ -30,7 +30,8 @@
     "testEnvironment": "node",
     "collectCoverageFrom": [
       "src/*.js"
-    ]
+    ],
+    "testPathIgnorePatterns": ["/node_modules/", "/__tests__/__fixtures__/"]
   },
   "keywords": [
     "markdown",

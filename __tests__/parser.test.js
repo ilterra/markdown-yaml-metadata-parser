@@ -1,37 +1,28 @@
-import fs from 'fs';
-import path from 'path';
+import { document01, document02, document03, document04, document05, document06, document07 } from './__fixtures__/documents'
 import metadataParser from '../src/parser';
 
-const source01 = fs.readFileSync(path.join(__dirname, 'fixtures', 'document-01.markdown'), 'utf-8');
-const source02 = fs.readFileSync(path.join(__dirname, 'fixtures', 'document-02.markdown'), 'utf-8');
-const source03 = fs.readFileSync(path.join(__dirname, 'fixtures', 'document-03.markdown'), 'utf-8');
-const source04 = fs.readFileSync(path.join(__dirname, 'fixtures', 'document-04.markdown'), 'utf-8');
-const source05 = fs.readFileSync(path.join(__dirname, 'fixtures', 'document-05.markdown'), 'utf-8');
-const source06 = fs.readFileSync(path.join(__dirname, 'fixtures', 'document-06.markdown'), 'utf-8');
-const source07 = fs.readFileSync(path.join(__dirname, 'fixtures', 'document-07.markdown'), 'utf-8');
-
 it('parses metadata in a syntactically correct markdown document', () => {
-  expect(metadataParser(source01)).toMatchSnapshot();
+  expect(metadataParser(document01)).toMatchSnapshot();
 });
 
 it('returns no metadata in a document without the ending triple dashes', () => {
-  expect(metadataParser(source02)).toMatchSnapshot();
+  expect(metadataParser(document02)).toMatchSnapshot();
 });
 
 it('returns no metadata in a document without the opening triple dashes', () => {
-  expect(metadataParser(source03)).toMatchSnapshot();
+  expect(metadataParser(document03)).toMatchSnapshot();
 });
 
 it('returns no metadata in a document with empty metadata', () => {
-  expect(metadataParser(source04)).toMatchSnapshot();
+  expect(metadataParser(document04)).toMatchSnapshot();
 });
 
 it('returns no metadata in a document with metadata placed at the end', () => {
-  expect(metadataParser(source05)).toMatchSnapshot();
+  expect(metadataParser(document05)).toMatchSnapshot();
 });
 
 it('returns no metadata in a document without metadata', () => {
-  expect(metadataParser(source06)).toMatchSnapshot();
+  expect(metadataParser(document06)).toMatchSnapshot();
 });
 
 it('throws TypeError if it doesn\'t receive a String', () => {
@@ -42,6 +33,6 @@ it('throws TypeError if it doesn\'t receive a String', () => {
 
 it('throws if metadata are syntactically incorrect', () => {
   expect(() => {
-    metadataParser(source07);
+    metadataParser(document07);
   }).toThrow();
 });
