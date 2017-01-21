@@ -58,5 +58,5 @@
     "prepublish": "npm run build && npm run flow-copy-source",
     "test": "jest --coverage"
   },
-  "version": "0.0.7"
+  "version": "0.0.8"
 }
