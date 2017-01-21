@@ -10,6 +10,12 @@ keywords: latin, ipsum
 
 Correct markdown document. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.`;
 
+const metadata01 = {
+  author: 'Marcus Antonius',
+  keywords: 'latin, ipsum',
+  title: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
+};
+
 const document02 = `---
 title: Lorem ipsum dolor sit amet, consectetur adipiscing
 author: Marcus Antonius
@@ -50,4 +56,4 @@ keywords: latin, ipsum
 
 Metadata with YAML syntax error. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.`;
 
-export { document01, document02, document03, document04, document05, document06, document07 };
+export { document01, metadata01, document02, document03, document04, document05, document06, document07 };

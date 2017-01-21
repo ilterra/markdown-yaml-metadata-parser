@@ -1,11 +1,8 @@
- // @flow
-
 /**
  * Markdown YAML metadata parser
  * @module markdown-yaml-metadata-parser
+ * @flow
  */
-
-import yaml from 'js-yaml';
 
 const METADATA_START = /^---\n/;
 const METADATA_END = /\n---\n/;
@@ -61,12 +58,13 @@ const splitSource = (src: string): SplitResult => {
  * keywords: latin, ipsum
  * ---
  *
+ * @param {Object} yamlParser The yaml parser.
  * @param {String} src The string to be parsed.
  * @throws {TypeError} Argument src must be a String.
  * @throws {YAMLException} On YAML parsing error.
  * @returns {Object} Two-property object: 'metadata': object of parsed metadata, 'content': document source without metadata
  */
-const parse = (src: string): ParseResult => {
+const parse = (yamlParser: Object, src: string): ParseResult => {
   if (!(typeof src === 'string' || src instanceof String)) {
     throw new TypeError('Source parameter (src) must be a string.');
   }
@@ -78,10 +76,10 @@ const parse = (src: string): ParseResult => {
   };
 
   if (splitResult.metadata) {
-    parseResult.metadata = yaml.safeLoad(splitResult.metadata);
+    parseResult.metadata = yamlParser.safeLoad(splitResult.metadata);
   }
 
   return parseResult;
 };
 
-module.exports = parse;
+export default parse;
