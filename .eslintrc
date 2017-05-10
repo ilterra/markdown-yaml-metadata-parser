@@ -1,15 +1,17 @@
 {
-    "extends": [
-        "airbnb/base",
-        "plugin:flowtype/recommended"
-    ],
-    "plugins": [
-        "import",
-        "flowtype"
-    ],
-    "rules": {
-        "max-len": [1, 120, 2, {"ignoreComments": true}],
-        "valid-jsdoc": ["error"],
-        "require-jsdoc": ["error"]
-    }
+  "extends": [
+    "airbnb/base",
+    "plugin:flowtype/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "plugins": [
+    "import",
+    "flowtype"
+  ],
+  "rules": {
+    "max-len": [1, 120, 2, {"ignoreComments": true}],
+    "valid-jsdoc": ["error"],
+    "require-jsdoc": ["error"]
+  }
 }
