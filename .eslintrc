@@ -3,15 +3,21 @@
     "airbnb/base",
     "plugin:flowtype/recommended",
     "plugin:import/errors",
-    "plugin:import/warnings"
+    "plugin:import/warnings",
+    "prettier",
+    "prettier/flowtype"
   ],
   "plugins": [
     "import",
-    "flowtype"
+    "flowtype",
+    "prettier"
   ],
   "rules": {
-    "max-len": [1, 120, 2, {"ignoreComments": true}],
+    "prettier/prettier": ["error", {"singleQuote": true}],
     "valid-jsdoc": ["error"],
     "require-jsdoc": ["error"]
+  },
+  "env": {
+    "jest": true
   }
 }
