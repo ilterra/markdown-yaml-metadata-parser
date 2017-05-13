@@ -1,9 +1,4 @@
-/**
- * Markdown YAML metadata parser
- * @module markdown-yaml-metadata-parser
- * @flow
- */
-
+// @flow
 const METADATA_START = /^---\n/;
 const METADATA_END = /\n---\n/;
 
@@ -12,12 +7,12 @@ const METADATA_END = /\n---\n/;
  */
 type SplitResult = {
   metadata: string,
-  content: string,
+  content: string
 };
 
 type ParseResult = {
   metadata: Object,
-  content: string,
+  content: string
 };
 
 /**
@@ -30,7 +25,7 @@ type ParseResult = {
 const splitSource = (src: string): SplitResult => {
   const splitResult = {
     metadata: '',
-    content: src,
+    content: src
   };
 
   if (src.match(METADATA_START)) {
@@ -49,6 +44,8 @@ const splitSource = (src: string): SplitResult => {
 };
 
 /**
+ * parse :: YAMLParser -> String -> Object
+ * 
  * Parse a markdown document looking for metadata in YAML format.
  * In order to be parsed, metadata must be placed at the beginning of the document between two triple dashes.
  * Example:
@@ -64,7 +61,7 @@ const splitSource = (src: string): SplitResult => {
  * @throws {YAMLException} On YAML parsing error.
  * @returns {Object} Two-property object: 'metadata': object of parsed metadata, 'content': document source without metadata
  */
-const parse = (yamlParser: Object, src: string): ParseResult => {
+const parse = (yamlParser: { safeLoad: string => Object | Error }) => (src: string): ParseResult => {
   if (!(typeof src === 'string' || src instanceof String)) {
     throw new TypeError('Source parameter (src) must be a string.');
   }
@@ -72,7 +69,7 @@ const parse = (yamlParser: Object, src: string): ParseResult => {
   const splitResult = splitSource(src);
   const parseResult = {
     metadata: {},
-    content: splitResult.content,
+    content: splitResult.content
   };
 
   if (splitResult.metadata) {
