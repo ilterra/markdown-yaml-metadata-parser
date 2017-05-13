@@ -3,5 +3,5 @@
     "add-module-exports",
     "transform-flow-strip-types"
   ],
-  "presets": ["es2015"]
+  "presets": ["es2015", "flow"]
 }
