@@ -1,4 +1,6 @@
-exports[`test parses metadata in a syntactically correct markdown document 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parses metadata in a syntactically correct markdown document 1`] = `
 Object {
   "content": "
 Correct markdown document. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
@@ -10,7 +12,7 @@ Correct markdown document. Vestibulum tortor quam, feugiat vitae, ultricies eget
 }
 `;
 
-exports[`test returns no metadata in a document with empty metadata 1`] = `
+exports[`returns no metadata in a document with empty metadata 1`] = `
 Object {
   "content": "
 Empty metadata. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
@@ -18,7 +20,7 @@ Empty metadata. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor si
 }
 `;
 
-exports[`test returns no metadata in a document with metadata placed at the end 1`] = `
+exports[`returns no metadata in a document with metadata placed at the end 1`] = `
 Object {
   "content": "Metadata not at the beginning of the document. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
 
@@ -31,7 +33,7 @@ keywords: comedy, movie
 }
 `;
 
-exports[`test returns no metadata in a document without metadata 1`] = `
+exports[`returns no metadata in a document without metadata 1`] = `
 Object {
   "content": "# Document with no metadata
 
@@ -40,7 +42,7 @@ Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac tu
 }
 `;
 
-exports[`test returns no metadata in a document without the ending triple dashes 1`] = `
+exports[`returns no metadata in a document without the ending triple dashes 1`] = `
 Object {
   "content": "---
 title: Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -52,7 +54,7 @@ No metadata end. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor s
 }
 `;
 
-exports[`test returns no metadata in a document without the opening triple dashes 1`] = `
+exports[`returns no metadata in a document without the opening triple dashes 1`] = `
 Object {
   "content": "title: Lorem ipsum dolor sit amet, consectetur adipiscing
 author: Marcus Antonius

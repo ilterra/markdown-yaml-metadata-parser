@@ -13,7 +13,7 @@ Correct markdown document. Vestibulum tortor quam, feugiat vitae, ultricies eget
 const metadata01 = {
   author: 'Marcus Antonius',
   keywords: 'latin, ipsum',
-  title: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
+  title: 'Lorem ipsum dolor sit amet, consectetur adipiscing'
 };
 
 const document02 = `---
