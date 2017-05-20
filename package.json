@@ -2,7 +2,9 @@
   "author": "Alberto Terragni",
   "bugs": "https://github.com/ninjabachelor/markdown-yaml-metadata-parser/issues",
   "dependencies": {
-    "js-yaml": "^3.7.0"
+    "folktale": "^2.0.0-beta1",
+    "js-yaml": "^3.7.0",
+    "ramda": "^0.23.0"
   },
   "description": "Parse YAML metadata in a markdown document",
   "devDependencies": {
