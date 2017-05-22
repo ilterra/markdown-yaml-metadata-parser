@@ -47,17 +47,16 @@ it('returns no metadata in a document without metadata', () => {
   expect(parser(yamlParser)(document06)).toMatchSnapshot();
 });
 
-it("throws TypeError if it doesn't receive a String", () => {
-  expect(() => {
-    parser(yamlParser)(123);
-  }).toThrowError(TypeError);
+it("returns TypeError if it doesn't receive a String", () => {
+  const parseResult = parser(yamlParser)(123);
+  expect(parseResult instanceof TypeError).toBeTruthy();
+  expect(parseResult.message).toMatchSnapshot();
 });
 
-it('throws if metadata are syntactically incorrect', () => {
+it('returns Error if metadata are syntactically incorrect', () => {
   yamlParser.safeLoad.mockImplementationOnce(() => {
     throw new Error();
   });
-  expect(() => {
-    parser(yamlParser)(document07);
-  }).toThrow();
+  const parseResult = parser(yamlParser)(document07);
+  expect(parseResult instanceof Error).toBeTruthy();
 });

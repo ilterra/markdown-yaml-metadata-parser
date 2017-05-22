@@ -3,6 +3,10 @@
 exports[`parses metadata in a syntactically correct markdown document 1`] = `
 Object {
   "content": "
+Correct markdown document. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+---
+Correct markdown document. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+
 Correct markdown document. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
   "metadata": Object {
     "author": "Marcus Antonius",
@@ -11,6 +15,8 @@ Correct markdown document. Vestibulum tortor quam, feugiat vitae, ultricies eget
   },
 }
 `;
+
+exports[`returns TypeError if it doesn't receive a String 1`] = `"Source parameter (src) must be a string."`;
 
 exports[`returns no metadata in a document with empty metadata 1`] = `
 Object {
