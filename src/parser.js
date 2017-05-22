@@ -1,52 +1,85 @@
 // @flow
+import R from 'ramda';
+import Result from 'folktale/data/result';
+
 const METADATA_START = /^---\n/;
 const METADATA_END = /\n---\n/;
+const JOIN_SEPARATOR = '\n---\n';
 
 /**
  * Flow type aliases
  */
-type SplitResult = {
-  metadata: string,
-  content: string
-};
-
 type ParseResult = {
   metadata: Object,
   content: string
 };
 
 /**
- * Split a markdown source string into a two-property object containing metadata and content.
- *
- * @private
- * @param {String} src The string to split.
- * @returns {Object} Two-property object containing 'metadata' and 'content'.
+ * getResultOfString :: a -> Result a TypeError
+ * 
+ * Given a value, it returns the Result.Ok of the value if it's a string, otherwise a Result.Error.
  */
-const splitSource = (src: string): SplitResult => {
-  const splitResult = {
-    metadata: '',
-    content: src
-  };
-
-  if (src.match(METADATA_START)) {
-    const sections = src.replace(METADATA_START, '').split(METADATA_END);
-
-    if (sections.length > 1) {
-      if (sections[0].trim()) {
-        splitResult.metadata = sections[0].trim();
-      }
-
-      splitResult.content = sections[1];
-    }
+const getResultOfString = (src: mixed): { value: string } => {
+  if (typeof src === 'string' || src instanceof String) {
+    return Result.Ok(src);
   }
 
-  return splitResult;
+  return Result.Error(new TypeError('Source parameter (src) must be a string.'));
 };
 
 /**
- * parse :: YAMLParser -> String -> Object
+ * cleanMetadata :: [String] -> String | null
  * 
- * Parse a markdown document looking for metadata in YAML format.
+ * If source array has more than one value, it cleans (remove METADATA_START and trim) and returns the first one.
+ * Otherwise it returns null.
+ */
+const cleanMetadata: Array<string> => string | null = R.ifElse(
+  R.compose(R.lt(1), R.length),
+  R.compose(R.trim, R.replace(METADATA_START, ''), R.head),
+  () => null
+);
+
+/**
+ * emptyObjectIfNil :: a -> a | {}
+ * 
+ * Set array first element as empty object if empty.
+ */
+const emptyObjectIfNil: mixed => mixed | {} = R.ifElse(R.isNil, () => ({}), R.identity);
+
+/**
+ * joinContent :: [String] -> String
+ * 
+ * Join elements of the array but first one (metadata).
+ * If there's only one element (no metadata), it returns it.
+ */
+const joinContent: Array<string> => string = R.ifElse(
+  R.compose(R.lt(1), R.length),
+  R.compose(R.join(JOIN_SEPARATOR), R.drop(1)),
+  R.head
+);
+
+/**
+ * splitSource :: String -> [Object, String]
+ * 
+ * Split a string with the METADATA_END separator if it starts with METADATA_START.
+ * Otherwise it creates a singleton array containing the value provided.
+ */
+const splitSource: string => Array<string> = R.ifElse(R.test(METADATA_START), R.split(METADATA_END), R.of);
+
+/**
+ * createParseResult :: Object -> String -> {metadata: Object, content: String}
+ * 
+ * Given two values, it returns an object with values mapped as metadata and content respectively.
+ */
+const createParseResult = (metadata: Object) => (content: string): ParseResult => ({
+  metadata,
+  content
+});
+
+/**
+ * parse :: YAMLParser -> String -> {metadata: a, content: b} | Error
+ * 
+ * Parse a markdown document (src) looking for metadata in YAML format.
  * In order to be parsed, metadata must be placed at the beginning of the document between two triple dashes.
  * Example:
  * ---
@@ -54,29 +87,24 @@ const splitSource = (src: string): SplitResult => {
  * author: Marcus Antonius
  * keywords: latin, ipsum
  * ---
- *
- * @param {Object} yamlParser The yaml parser.
- * @param {String} src The string to be parsed.
- * @throws {TypeError} Argument src must be a String.
- * @throws {YAMLException} On YAML parsing error.
- * @returns {Object} Two-property object: 'metadata': object of parsed metadata, 'content': document source without metadata
  */
-const parse = (yamlParser: { safeLoad: string => Object | Error }) => (src: string): ParseResult => {
-  if (!(typeof src === 'string' || src instanceof String)) {
-    throw new TypeError('Source parameter (src) must be a string.');
-  }
+const parse = (yamlParser: { safeLoad: string => Object | Error }) => (src: string): ParseResult | Error => {
+  // safeYamlParse :: String -> Result Object YAMLException
+  const safeYamlParse = metadataString => Result.try(() => yamlParser.safeLoad(metadataString));
 
-  const splitResult = splitSource(src);
-  const parseResult = {
-    metadata: {},
-    content: splitResult.content
-  };
+  // getMetadata :: String -> String | null
+  const getMetadata = R.compose(cleanMetadata, splitSource);
 
-  if (splitResult.metadata) {
-    parseResult.metadata = yamlParser.safeLoad(splitResult.metadata);
-  }
+  // getContentResult :: Result -> Result Object Error
+  const getMetadataResult = R.compose(R.map(emptyObjectIfNil), R.chain(safeYamlParse), R.map(getMetadata));
 
-  return parseResult;
+  // getContentResult :: Result -> Result String Error
+  const getContentResult = R.map(R.compose(joinContent, splitSource));
+
+  const getParseResult = R.lift(createParseResult);
+  const resultOfSrc = getResultOfString(src);
+
+  return getParseResult(getMetadataResult(resultOfSrc), getContentResult(resultOfSrc)).merge();
 };
 
 export default parse;
