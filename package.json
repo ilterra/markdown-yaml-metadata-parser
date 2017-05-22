@@ -62,9 +62,8 @@
     "eslint:fix": "eslint --fix src __tests__",
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "flow-copy-source": "flow-copy-source src lib",
-    "format": "prettier --single-quote --write '{src,__tests__}/**/*.js'",
     "prepublish": "yarn run build && yarn run flow-copy-source",
     "test": "jest --coverage"
   },
-  "version": "0.0.8"
+  "version": "1.0.0"
 }
