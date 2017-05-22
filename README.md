@@ -56,4 +56,4 @@ result.content;
 
 ## License
 
-MYMParser is licensed under the MIT License. See the `LICENSE` file for details.
+Markdown YAML metadata parser is licensed under the MIT License. See the `LICENSE` file for details.
