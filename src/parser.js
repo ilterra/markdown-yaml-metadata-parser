@@ -1,6 +1,6 @@
 // @flow
 import R from 'ramda';
-import Result from 'folktale/data/result';
+import Result from 'folktale/result';
 
 const METADATA_START = /^---\n/;
 const METADATA_END = /\n---\n/;

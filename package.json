@@ -2,7 +2,7 @@
   "author": "Alberto Terragni",
   "bugs": "https://github.com/ninjabachelor/markdown-yaml-metadata-parser/issues",
   "dependencies": {
-    "folktale": "^2.0.0-beta1",
+    "folktale": "^2.1.0",
     "js-yaml": "^3.8.4",
     "ramda": "^0.24.0"
   },
