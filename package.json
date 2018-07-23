@@ -27,11 +27,11 @@
     "prettier": "^1.13.7"
   },
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=6.0.0"
   },
   "files": [
     "lib",
-    "yarn.lock"
+    "package-lock.lock"
   ],
   "jest": {
     "testEnvironment": "node",
