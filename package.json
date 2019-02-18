@@ -2,27 +2,11 @@
   "author": "Alberto Terragni",
   "bugs": "https://github.com/ninjabachelor/markdown-yaml-metadata-parser/issues",
   "dependencies": {
-    "folktale": "^2.3.2",
     "js-yaml": "^3.12.1",
     "ramda": "^0.26.1"
   },
   "description": "Parse YAML metadata in a markdown document",
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.3.3",
-    "@babel/plugin-transform-flow-strip-types": "^7.2.3",
-    "@babel/preset-env": "^7.3.1",
-    "@babel/preset-flow": "^7.0.0",
-    "babel-eslint": "^10.0.1",
-    "babel-plugin-add-module-exports": "^1.0.0",
-    "eslint": "^5.14.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^4.0.0",
-    "eslint-plugin-flowtype": "^3.4.2",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-prettier": "^3.0.1",
-    "flow-bin": "^0.93.0",
-    "flow-copy-source": "^2.0.3",
     "jest": "^24.1.0",
     "prettier": "^1.16.4"
   },
@@ -30,13 +14,12 @@
     "node": ">=6.0.0"
   },
   "files": [
-    "lib",
-    "package-lock.lock"
+    "lib"
   ],
   "jest": {
     "testEnvironment": "node",
     "collectCoverageFrom": [
-      "src/*.js"
+      "lib/*.js"
     ],
     "testPathIgnorePatterns": [
       "/node_modules/",
@@ -46,7 +29,8 @@
   "keywords": [
     "markdown",
     "yaml",
-    "metadata"
+    "metadata",
+    "parser"
   ],
   "license": "MIT",
   "main": "./lib/index.js",
@@ -56,14 +40,8 @@
     "url": "https://github.com/ninjabachelor/markdown-yaml-metadata-parser"
   },
   "scripts": {
-    "build": "rm -rf lib && mkdir lib && babel src -d lib",
-    "build:watch": "rm -rf lib && mkdir lib && babel -w src -d lib",
-    "eslint": "eslint src __tests__",
-    "eslint:fix": "eslint --fix src __tests__",
-    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
-    "flow-copy-source": "flow-copy-source src lib",
-    "prepublish": "npm run build && npm run flow-copy-source",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "prettier": "prettier --single-quote true --write 'lib/**/*.js' '__tests__/**/*.js'"
   },
-  "version": "1.1.2"
+  "version": "2.0.0"
 }
