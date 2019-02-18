@@ -16,8 +16,6 @@ Correct markdown document. Vestibulum tortor quam, feugiat vitae, ultricies eget
 }
 `;
 
-exports[`returns TypeError if it doesn't receive a String 1`] = `"Source parameter (src) must be a string."`;
-
 exports[`returns no metadata in a document with empty metadata 1`] = `
 Object {
   "content": "

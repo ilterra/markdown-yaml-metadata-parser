@@ -1,14 +1,5 @@
-import {
-  document01,
-  metadata01,
-  document02,
-  document03,
-  document04,
-  document05,
-  document06,
-  document07
-} from './__fixtures__/documents';
-import parser from '../src/parser';
+const parser = require('../lib/parser');
+const source = require('./__fixtures__/documents');
 
 /**
  * Mock js-yaml.
@@ -23,40 +14,48 @@ beforeAll(() => {
 });
 
 it('parses metadata in a syntactically correct markdown document', () => {
-  yamlParser.safeLoad.mockImplementationOnce(() => metadata01);
-  expect(parser(yamlParser)(document01)).toMatchSnapshot();
+  yamlParser.safeLoad.mockImplementationOnce(() => source.metadata01);
+  expect(parser(yamlParser)(source.document01)).toMatchSnapshot();
 });
 
 it('returns no metadata in a document without the ending triple dashes', () => {
-  expect(parser(yamlParser)(document02)).toMatchSnapshot();
+  expect(parser(yamlParser)(source.document02)).toMatchSnapshot();
 });
 
 it('returns no metadata in a document without the opening triple dashes', () => {
-  expect(parser(yamlParser)(document03)).toMatchSnapshot();
+  expect(parser(yamlParser)(source.document03)).toMatchSnapshot();
 });
 
 it('returns no metadata in a document with empty metadata', () => {
-  expect(parser(yamlParser)(document04)).toMatchSnapshot();
+  expect(parser(yamlParser)(source.document04)).toMatchSnapshot();
 });
 
 it('returns no metadata in a document with metadata placed at the end', () => {
-  expect(parser(yamlParser)(document05)).toMatchSnapshot();
+  expect(parser(yamlParser)(source.document05)).toMatchSnapshot();
 });
 
 it('returns no metadata in a document without metadata', () => {
-  expect(parser(yamlParser)(document06)).toMatchSnapshot();
+  expect(parser(yamlParser)(source.document06)).toMatchSnapshot();
 });
 
-it("returns TypeError if it doesn't receive a String", () => {
-  const parseResult = parser(yamlParser)(123);
-  expect(parseResult instanceof TypeError).toBeTruthy();
-  expect(parseResult.message).toMatchSnapshot();
+it("throws TypeError if it doesn't receive a String", () => {
+  function parseNumber() {
+    parser(yamlParser)(123);
+  }
+
+  expect(parseNumber).toThrowError(
+    TypeError('Source parameter (src) must be a string.')
+  );
 });
 
-it('returns Error if metadata are syntactically incorrect', () => {
+it('throws Error if metadata are syntactically incorrect', () => {
   yamlParser.safeLoad.mockImplementationOnce(() => {
     throw new Error();
   });
-  const parseResult = parser(yamlParser)(document07);
-  expect(parseResult instanceof Error).toBeTruthy();
+
+  function parseSyntacticallyIncorrectYAML() {
+    parser(yamlParser)(source.document07);
+  }
+
+  expect(parseSyntacticallyIncorrectYAML).toThrow();
 });
