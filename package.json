@@ -2,16 +2,16 @@
   "author": "Alberto Terragni",
   "bugs": "https://github.com/ninjabachelor/markdown-yaml-metadata-parser/issues",
   "dependencies": {
-    "js-yaml": "^3.12.1",
+    "js-yaml": "^3.13.1",
     "ramda": "^0.26.1"
   },
   "description": "Parse YAML metadata in a markdown document",
   "devDependencies": {
-    "jest": "^24.1.0",
-    "prettier": "^1.16.4"
+    "jest": "^24.8.0",
+    "prettier": "^1.17.1"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.0.0"
   },
   "files": [
     "lib"
@@ -43,5 +43,5 @@
     "test": "jest --coverage",
     "prettier": "prettier --single-quote true --write 'lib/**/*.js' '__tests__/**/*.js'"
   },
-  "version": "2.0.0"
+  "version": "2.0.1"
 }
