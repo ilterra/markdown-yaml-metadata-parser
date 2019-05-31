@@ -16,6 +16,17 @@ Correct markdown document. Vestibulum tortor quam, feugiat vitae, ultricies eget
 }
 `;
 
+exports[`parses metadata in a syntactically correct markdown document with no content 1`] = `
+Object {
+  "content": "",
+  "metadata": Object {
+    "author": "Marcus Antonius",
+    "keywords": "latin, ipsum",
+    "title": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+  },
+}
+`;
+
 exports[`returns no metadata in a document with empty metadata 1`] = `
 Object {
   "content": "

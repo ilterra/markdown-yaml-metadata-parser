@@ -18,24 +18,29 @@ it('parses metadata in a syntactically correct markdown document', () => {
   expect(parser(yamlParser)(source.document01)).toMatchSnapshot();
 });
 
-it('returns no metadata in a document without the ending triple dashes', () => {
+it('parses metadata in a syntactically correct markdown document with no content', () => {
+  yamlParser.safeLoad.mockImplementationOnce(() => source.metadata02);
   expect(parser(yamlParser)(source.document02)).toMatchSnapshot();
 });
 
-it('returns no metadata in a document without the opening triple dashes', () => {
+it('returns no metadata in a document without the ending triple dashes', () => {
   expect(parser(yamlParser)(source.document03)).toMatchSnapshot();
 });
 
-it('returns no metadata in a document with empty metadata', () => {
+it('returns no metadata in a document without the opening triple dashes', () => {
   expect(parser(yamlParser)(source.document04)).toMatchSnapshot();
 });
 
-it('returns no metadata in a document with metadata placed at the end', () => {
+it('returns no metadata in a document with empty metadata', () => {
   expect(parser(yamlParser)(source.document05)).toMatchSnapshot();
 });
 
-it('returns no metadata in a document without metadata', () => {
+it('returns no metadata in a document with metadata placed at the end', () => {
   expect(parser(yamlParser)(source.document06)).toMatchSnapshot();
+});
+
+it('returns no metadata in a document without metadata', () => {
+  expect(parser(yamlParser)(source.document07)).toMatchSnapshot();
 });
 
 it("throws TypeError if it doesn't receive a String", () => {
@@ -54,7 +59,7 @@ it('throws Error if metadata are syntactically incorrect', () => {
   });
 
   function parseSyntacticallyIncorrectYAML() {
-    parser(yamlParser)(source.document07);
+    parser(yamlParser)(source.document08);
   }
 
   expect(parseSyntacticallyIncorrectYAML).toThrow();
