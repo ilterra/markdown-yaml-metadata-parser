@@ -2,7 +2,12 @@
 
 exports[`parses metadata in a syntactically correct markdown document 1`] = `
 Object {
-  "content": "
+  "content": "---
+title: Lorem ipsum dolor sit amet, consectetur adipiscing
+author: Marcus Antonius
+keywords: latin, ipsum
+---
+
 Correct markdown document. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
 ---
 Correct markdown document. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
@@ -18,7 +23,11 @@ Correct markdown document. Vestibulum tortor quam, feugiat vitae, ultricies eget
 
 exports[`parses metadata in a syntactically correct markdown document with no content 1`] = `
 Object {
-  "content": "",
+  "content": "---
+title: Lorem ipsum dolor sit amet, consectetur adipiscing
+author: Marcus Antonius
+keywords: latin, ipsum
+---",
   "metadata": Object {
     "author": "Marcus Antonius",
     "keywords": "latin, ipsum",
@@ -29,7 +38,10 @@ Object {
 
 exports[`returns no metadata in a document with empty metadata 1`] = `
 Object {
-  "content": "
+  "content": "---
+
+---
+
 Empty metadata. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
   "metadata": Object {},
 }
