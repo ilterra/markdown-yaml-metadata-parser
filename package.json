@@ -8,7 +8,7 @@
   "description": "Parse YAML metadata in a markdown document",
   "devDependencies": {
     "jest": "^24.9.0",
-    "prettier": "^1.18.2"
+    "prettier": "^1.19.1"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -43,5 +43,5 @@
     "test": "jest --coverage",
     "prettier": "prettier --single-quote true --write 'lib/**/*.js' '__tests__/**/*.js'"
   },
-  "version": "2.0.3"
+  "version": "2.0.4"
 }
