@@ -3,6 +3,7 @@
   "bugs": "https://github.com/ninjabachelor/markdown-yaml-metadata-parser/issues",
   "dependencies": {
     "js-yaml": "^3.13.1",
+    "platform": "^1.3.5",
     "ramda": "^0.27.0"
   },
   "description": "Parse YAML metadata in a markdown document",
