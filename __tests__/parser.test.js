@@ -53,17 +53,7 @@ it("throws TypeError if it doesn't receive a String for src parameter", () => {
   );
 });
 
-it("throws TypeError if it receives an empty configuration", () => {
-  function parseNumber() {
-    parser(yamlParser)("123", {});
-  }
-
-  expect(parseNumber).toThrowError(
-    TypeError('Configuration can\'t be empty.')
-  );
-});
-
-it("throws TypeError if it doesn't receive a boolean as windows configuration", () => {
+it("throws TypeError if configuration is set but windows prop is not boolean", () => {
   function parseNumber() {
     parser(yamlParser)("123", { windows: "true" });
   }
