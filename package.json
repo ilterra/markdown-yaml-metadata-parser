@@ -44,5 +44,5 @@
     "test": "jest --coverage",
     "prettier": "prettier --single-quote true --write 'lib/**/*.js' '__tests__/**/*.js'"
   },
-  "version": "2.0.5"
+  "version": "2.1.0"
 }

@@ -43,13 +43,33 @@ it('returns no metadata in a document without metadata', () => {
   expect(parser(yamlParser)(source.document07)).toMatchSnapshot();
 });
 
-it("throws TypeError if it doesn't receive a String", () => {
+it("throws TypeError if it doesn't receive a String for src parameter", () => {
   function parseNumber() {
     parser(yamlParser)(123);
   }
 
   expect(parseNumber).toThrowError(
     TypeError('Source parameter (src) must be a string.')
+  );
+});
+
+it("throws TypeError if it receives an empty configuration", () => {
+  function parseNumber() {
+    parser(yamlParser)("123", {});
+  }
+
+  expect(parseNumber).toThrowError(
+    TypeError('Configuration can\'t be empty.')
+  );
+});
+
+it("throws TypeError if it doesn't receive a boolean as windows configuration", () => {
+  function parseNumber() {
+    parser(yamlParser)("123", { windows: "true" });
+  }
+
+  expect(parseNumber).toThrowError(
+    TypeError('Configuration property (windows) must be a boolean.')
   );
 });
 
