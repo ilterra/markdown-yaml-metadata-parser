@@ -1,3 +1,5 @@
+'use strict'
+/* eslint-env jest */
 const parser = require('../lib/parser')
 const source = require('./__fixtures__/documents')
 
