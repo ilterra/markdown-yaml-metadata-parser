@@ -3,12 +3,11 @@
   "bugs": "https://github.com/ninjabachelor/markdown-yaml-metadata-parser/issues",
   "dependencies": {
     "detect-newline": "^3.1.0",
-    "js-yaml": "^3.14.0",
-    "ramda": "^0.27.0"
+    "js-yaml": "^3.14.0"
   },
   "description": "Parse YAML metadata in a markdown document",
   "devDependencies": {
-    "jest": "^26.0.1",
+    "jest": "^26.1.0",
     "standard": "^14.3.4"
   },
   "engines": {
