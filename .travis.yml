@@ -5,6 +5,11 @@ node_js:
   - "12"
   - "10"
 
+os:
+  - linux
+  - osx
+  - windows
+
 branches:
   only:
     - master
