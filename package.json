@@ -43,5 +43,5 @@
     "lint": "standard --fix",
     "test": "standard && jest --coverage"
   },
-  "version": "2.1.0"
+  "version": "2.1.1"
 }
