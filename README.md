@@ -2,56 +2,57 @@
 
 [![Build Status](https://travis-ci.org/ilterra/markdown-yaml-metadata-parser.svg?branch=master)](https://travis-ci.org/ilterra/markdown-yaml-metadata-parser)
 
-Markdown YAML metadata parser. Parse YAML metadata in a markdown document.
+Parse YAML metadata (front matter) in a markdown document.
+
+This is a dual module, supporting both ECMAScript modules (ESM) and CommonJS specifications.
 
 ## Installation
 
-Install the latest version with npm or Yarn:
+Install the latest version via npm:
 
 ```bash
 $ npm install markdown-yaml-metadata-parser
 ```
 
-```bash
-$ yarn add markdown-yaml-metadata-parser
-```
-
 ## Usage
 
-In order to be parsed, metadata must be placed at the beginning of the markdown document between two triple dashes. Example:
+In order to be parsed, metadata must be placed at the beginning of the markdown document between two triple dashes (YAML front matter). Example:
 
     ---
-    title: Lorem ipsum dolor sit amet
-    author: Marcus Antonius
-    keywords: latin, ipsum
+    title: Meditations
+    author: Marcus Aurelius
+    keywords: stoicism, book
     ---
 
     Vestibulum tortor quam, *feugiat vitae*, ultricies eget, tempor sit amet, ante.
 
-Here's how to parse the metadata:
+Here's how to parse the metadata. Import (or require) the parser:
 
 ```js
-const metadataParser = require('markdown-yaml-metadata-parser');
+import metadataParser from 'markdown-yaml-metadata-parser'
+```
 
-// Assuming source is a string containing the markdown document
-const source = '--- title: Lorem...';
+Assuming source is a string containing the markdown document, parse source:
 
-// Parse source. Result is a two-property object
-const result = metadataParser(source);
+```js
+const source = '--- title: Meditations...'
+const result = metadataParser(source)
+```
 
-// The first property, 'metadata', is the object of parsed metadata. Example:
-//
-// {
-//     'title': 'Lorem ipsum dolor sit amet',
-//     'author': 'Marcus Antonius',
-//     'keywords': 'latin, ipsum'
-// };
-result.metadata;
+`result` is a two-property object. The first property, `result.metadata`, is the object of parsed metadata:
 
-// The second property, 'content', is the document source without metadata. Example:
-//
-// Vestibulum tortor quam, *feugiat vitae*, ultricies eget, tempor sit amet, ante.
-result.content;
+```js
+{
+  'title': 'Meditations',
+  'author': 'Marcus Aurelius',
+  'keywords': 'stoicism, book'
+}
+```
+
+The second property, `result.content`, is the document source without metadata:
+
+```js
+Vestibulum tortor quam, *feugiat vitae*, ultricies eget, tempor sit amet, ante.
 ```
 
 ## License
