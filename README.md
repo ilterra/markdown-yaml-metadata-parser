@@ -51,7 +51,7 @@ const result = metadataParser(source)
 
 The second property, `result.content`, is the document source without metadata:
 
-```js
+```
 Vestibulum tortor quam, *feugiat vitae*, ultricies eget, tempor sit amet, ante.
 ```
 
