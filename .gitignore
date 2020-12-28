@@ -1,11 +1,12 @@
 *.log
 npm-debug.log*
-coverage
 node_modules
 .npm
 .idea
 .DS_Store
 .vscode
+.nyc_output
+coverage
 package-lock.json
 cjs/*
 !cjs/package.json
