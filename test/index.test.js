@@ -1,5 +1,5 @@
 import t from 'tap'
-import metadataParser from '../esm/index.js'
+import metadataParser from '../lib/index.js'
 import source from './fixtures/documents.js'
 
 const parseDocument = (t, document) => {

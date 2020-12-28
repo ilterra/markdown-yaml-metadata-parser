@@ -17,11 +17,11 @@
   },
   "exports": {
     "require": "./cjs/index.js",
-    "default": "./esm/index.js"
+    "default": "./lib/index.js"
   },
   "files": [
     "cjs",
-    "esm"
+    "lib"
   ],
   "keywords": [
     "markdown",
@@ -31,7 +31,7 @@
   ],
   "license": "MIT",
   "main": "./cjs/index.js",
-  "module": "./esm/index.js",
+  "module": "./lib/index.js",
   "name": "markdown-yaml-metadata-parser",
   "repository": {
     "type": "git",
