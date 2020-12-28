@@ -42,7 +42,8 @@
     "build": "mkdirp cjs/lib cjs/test && ascjs lib cjs/lib --no-default && ascjs test cjs/test --no-default",
     "lint": "standard --fix",
     "prepublishOnly": "npm run build",
-    "test": "standard && npm run test:esm && npm run test:cjs",
+    "pretest": "standard && npm run build",
+    "test": "npm run test:esm && npm run test:cjs",
     "test:cjs": "tap --no-esm cjs/test/*.test.js",
     "test:esm": "c8 tap --no-coverage --no-esm test/*.test.js"
   },
