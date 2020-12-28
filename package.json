@@ -9,6 +9,7 @@
   "devDependencies": {
     "ascjs": "^4.0.3",
     "c8": "^7.3.5",
+    "mkdirp": "^1.0.4",
     "standard": "^16.0.3",
     "tap": "^14.11.0"
   },
@@ -16,7 +17,7 @@
     "node": ">=10.0.0"
   },
   "exports": {
-    "require": "./cjs/index.js",
+    "require": "./cjs/lib/index.js",
     "default": "./lib/index.js"
   },
   "files": [
@@ -30,7 +31,7 @@
     "parser"
   ],
   "license": "MIT",
-  "main": "./cjs/index.js",
+  "main": "./cjs/lib/index.js",
   "module": "./lib/index.js",
   "name": "markdown-yaml-metadata-parser",
   "repository": {
@@ -38,7 +39,7 @@
     "url": "https://github.com/ilterra/markdown-yaml-metadata-parser"
   },
   "scripts": {
-    "build": "ascjs esm cjs --no-default",
+    "build": "mkdirp cjs/lib cjs/test && ascjs lib cjs/lib --no-default && ascjs test cjs/test --no-default",
     "lint": "standard --fix",
     "test": "standard && c8 tap --no-coverage --no-esm test/*.test.js"
   },
