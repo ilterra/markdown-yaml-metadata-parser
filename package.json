@@ -5,7 +5,7 @@
     "detect-newline": "^3.1.0",
     "js-yaml": "^3.14.1"
   },
-  "description": "Parse YAML metadata in a markdown document",
+  "description": "Parse YAML metadata (front matter) in a markdown document",
   "devDependencies": {
     "ascjs": "^4.0.3",
     "c8": "^7.3.5",
@@ -25,10 +25,11 @@
     "lib"
   ],
   "keywords": [
+    "front matter",
     "markdown",
-    "yaml",
     "metadata",
-    "parser"
+    "parser",
+    "yaml"
   ],
   "license": "MIT",
   "main": "./cjs/lib/index.js",
