@@ -4,9 +4,9 @@
  */
 const document01 = {
   text: `---
-title: Lorem ipsum dolor sit amet, consectetur adipiscing
-author: Marcus Antonius
-keywords: latin, ipsum
+title: Meditations
+author: Marcus Aurelius
+keywords: stoicism, book
 ---
 
 Correct markdown document. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
@@ -21,52 +21,52 @@ Correct markdown document. Vestibulum tortor quam, feugiat vitae, ultricies eget
 
 Correct markdown document. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.`,
   metadata: {
-    author: 'Marcus Antonius',
-    keywords: 'latin, ipsum',
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing'
+    author: 'Marcus Aurelius',
+    keywords: 'stoicism, book',
+    title: 'Meditations'
   }
 }
 
 const document02 = {
   text: `---
-title: Lorem ipsum dolor sit amet, consectetur adipiscing
-author: Marcus Antonius
-keywords: latin, ipsum
+title: Meditations
+author: Marcus Aurelius
+keywords: stoicism, book
 ---`,
   content: '',
   metadata: {
-    author: 'Marcus Antonius',
-    keywords: 'latin, ipsum',
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing'
+    author: 'Marcus Aurelius',
+    keywords: 'stoicism, book',
+    title: 'Meditations'
   }
 }
 
 const document03 = {
   text: `---
-title: Lorem ipsum dolor sit amet, consectetur adipiscing
-author: Marcus Antonius
-keywords: latin, ipsum
+title: Meditations
+author: Marcus Aurelius
+keywords: stoicism, book
 
 No metadata end. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.`,
   content: `---
-title: Lorem ipsum dolor sit amet, consectetur adipiscing
-author: Marcus Antonius
-keywords: latin, ipsum
+title: Meditations
+author: Marcus Aurelius
+keywords: stoicism, book
 
 No metadata end. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.`,
   metadata: {}
 }
 
 const document04 = {
-  text: `title: Lorem ipsum dolor sit amet, consectetur adipiscing
-author: Marcus Antonius
-keywords: latin, ipsum
+  text: `title: Meditations
+author: Marcus Aurelius
+keywords: stoicism, book
 ---
 
 No metadata start. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.`,
-  content: `title: Lorem ipsum dolor sit amet, consectetur adipiscing
-author: Marcus Antonius
-keywords: latin, ipsum
+  content: `title: Meditations
+author: Marcus Aurelius
+keywords: stoicism, book
 ---
 
 No metadata start. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.`,
@@ -88,16 +88,16 @@ const document06 = {
   text: `Metadata not at the beginning of the document. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
 
 ---
-title: The murder of our hopes and dreams
-author: Master John
-keywords: comedy, movie
+title: Meditations
+author: Marcus Aurelius
+keywords: stoicism, book
 ---`,
   content: `Metadata not at the beginning of the document. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
 
 ---
-title: The murder of our hopes and dreams
-author: Master John
-keywords: comedy, movie
+title: Meditations
+author: Marcus Aurelius
+keywords: stoicism, book
 ---`,
   metadata: {}
 }
@@ -115,8 +115,8 @@ Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac tu
 const document08 = {
   text: `---
 deliberate yaml syntax error
-author: Marcus Antonius
-keywords: latin, ipsum
+author: Marcus Aurelius
+keywords: stoicism, book
 ---
 
 Metadata with YAML syntax error. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.`
