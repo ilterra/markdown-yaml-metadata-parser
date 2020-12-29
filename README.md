@@ -4,7 +4,7 @@
 
 Parse YAML metadata (front matter) in a markdown document.
 
-This is a dual module, supporting both ECMAScript modules (ESM) and CommonJS specifications.
+This is a dual module, written in ESM (ECMAScript modules) and supporting CJS (CommonJS).
 
 ## Installation
 
