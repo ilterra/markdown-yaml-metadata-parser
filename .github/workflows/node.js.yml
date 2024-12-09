@@ -22,6 +22,7 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
+        cache-dependency-path: package.json
         cache: 'npm'
     - run: npm install
     - run: npm run build --if-present
