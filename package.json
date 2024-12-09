@@ -8,10 +8,8 @@
   "description": "Parse YAML metadata (front matter) in a markdown document",
   "devDependencies": {
     "ascjs": "^4.0.3",
-    "c8": "^7.3.5",
     "mkdirp": "^1.0.4",
-    "standard": "^16.0.3",
-    "tap": "^14.11.0"
+    "standard": "^16.0.3"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -45,8 +43,8 @@
     "prepublishOnly": "npm run build",
     "pretest": "standard && npm run build",
     "test": "npm run test:esm && npm run test:cjs",
-    "test:cjs": "tap --no-esm cjs/test/*.test.js",
-    "test:esm": "c8 tap --no-coverage --no-esm test/*.test.js"
+    "test:cjs": "node --test --experimental-test-coverage cjs/test/*.test.js",
+    "test:esm": "node --test --experimental-test-coverage test/*.test.js"
   },
   "type": "module",
   "version": "3.0.0"
