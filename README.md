@@ -1,6 +1,6 @@
 # Markdown YAML metadata parser
 
-![Build Status](https://github.com/ilterra/markdown-yaml-metadata-parser/actions/workflows/node.js.yml/badge.svg)
+![Build Status](https://github.com/ilterra/markdown-yaml-metadata-parser/actions/workflows/ci.yml/badge.svg)
 
 Parse YAML metadata (front matter) in a markdown document.
 
