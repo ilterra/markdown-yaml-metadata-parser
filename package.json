@@ -47,5 +47,5 @@
     "test:esm": "node --test --experimental-test-coverage test/*.test.js"
   },
   "type": "module",
-  "version": "3.0.0"
+  "version": "4.0.0"
 }
