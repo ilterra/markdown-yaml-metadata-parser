@@ -1,5 +1,5 @@
 ---
-title: Lorem ipsum dolor sit amet, consectetur adipiscing
-author: Marcus Antonius
-keywords: latin, ipsum
+title: Meditations
+author: Marcus Aurelius
+keywords: stoicism, book
 ---
