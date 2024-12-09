@@ -43,8 +43,8 @@
     "prepublishOnly": "npm run build",
     "pretest": "standard && npm run build",
     "test": "npm run test:esm && npm run test:cjs",
-    "test:cjs": "node --test --experimental-test-coverage ./cjs/test/index.test.js",
-    "test:esm": "node --test --experimental-test-coverage ./test/index.test.js"
+    "test:cjs": "node --test --experimental-test-coverage cjs/test/index.test.js",
+    "test:esm": "node --test --experimental-test-coverage test/index.test.js"
   },
   "type": "module",
   "version": "4.0.0"
