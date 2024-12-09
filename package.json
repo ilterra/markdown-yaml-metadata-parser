@@ -3,7 +3,7 @@
   "bugs": "https://github.com/ilterra/markdown-yaml-metadata-parser/issues",
   "dependencies": {
     "detect-newline": "^3.1.0",
-    "js-yaml": "^3.14.1"
+    "js-yaml": "^4.1.0"
   },
   "description": "Parse YAML metadata (front matter) in a markdown document",
   "devDependencies": {
