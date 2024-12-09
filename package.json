@@ -7,9 +7,9 @@
   },
   "description": "Parse YAML metadata (front matter) in a markdown document",
   "devDependencies": {
-    "ascjs": "^4.0.3",
-    "mkdirp": "^1.0.4",
-    "standard": "^16.0.3"
+    "ascjs": "^6.0.3",
+    "mkdirp": "^3.0.1",
+    "standard": "^17.1.2"
   },
   "engines": {
     "node": ">=18.0.0"
